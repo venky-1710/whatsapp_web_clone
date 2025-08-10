@@ -14,9 +14,7 @@ const server = http.createServer(app);
 
 // Define allowed origins for both Express and Socket.IO
 const allowedOrigins = [
-  "https://whatsapp-web-clone-nine-jade.vercel.app",
-  "http://localhost:3000",
-  "http://localhost:3001"
+  "https://whatsapp-web-clone-nine-jade.vercel.app"
 ];
 
 const io = new Server(server, {

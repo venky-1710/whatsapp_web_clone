@@ -11,21 +11,29 @@ require('dotenv').config();
 
 const app = express();
 const server = http.createServer(app);
+
+// Define allowed origins for both Express and Socket.IO
+const allowedOrigins = [
+  "https://whatsapp-web-clone-nine-jade.vercel.app",
+  "http://localhost:3000",
+  "http://localhost:3001"
+];
+
 const io = new Server(server, {
   cors: {
-    origin: process.env.SOCKET_CORS_ORIGIN || process.env.CLIENT_URL ,
-    methods: ["GET", "POST"]
+    origin: allowedOrigins,
+    methods: ["GET", "POST"],
+    credentials: true
   }
 });
 
 // Middleware
 app.use(cors({
-  origin: [
-    "https://whatsapp-web-clone-nine-jade.vercel.app",
-    "http://localhost:3000"
-  ],
+  origin: allowedOrigins,
   credentials: true
 }));
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
 // MongoDB Connection
 const MONGODB_URI = process.env.MONGODB_URI;

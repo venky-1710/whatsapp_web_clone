@@ -20,10 +20,12 @@ const io = new Server(server, {
 
 // Middleware
 app.use(cors({
-  origin: process.env.CLIENT_URL,
+  origin: [
+    "https://whatsapp-web-clone-nine-jade.vercel.app",
+    "http://localhost:3000"
+  ],
   credentials: true
 }));
-app.use(express.json());
 
 // MongoDB Connection
 const MONGODB_URI = process.env.MONGODB_URI;

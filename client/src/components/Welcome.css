@@ -1,0 +1,84 @@
+.welcome-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  background-color: #0b141a;
+  position: relative;
+}
+
+.welcome-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 60 60"><g fill="%23182229" fill-opacity="0.05"><circle cx="15" cy="15" r="2"/><circle cx="45" cy="15" r="2"/><circle cx="30" cy="30" r="2"/><circle cx="15" cy="45" r="2"/><circle cx="45" cy="45" r="2"/></g></svg>');
+  background-repeat: repeat;
+}
+
+.welcome-content {
+  text-align: center;
+  z-index: 1;
+  position: relative;
+  max-width: 460px;
+  padding: 40px 20px;
+}
+
+.welcome-image {
+  margin-bottom: 32px;
+  display: flex;
+  justify-content: center;
+  opacity: 0.8;
+}
+
+.welcome-text h1 {
+  color: #e9edef;
+  font-size: 32px;
+  font-weight: 300;
+  margin-bottom: 16px;
+}
+
+.welcome-text p {
+  color: #8696a0;
+  font-size: 14px;
+  line-height: 1.5;
+  margin-bottom: 8px;
+  max-width: 400px;
+}
+
+.welcome-footer {
+  margin-top: 32px;
+  padding-top: 24px;
+  border-top: 1px solid #2a3942;
+}
+
+.security-info {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  color: #8696a0;
+  font-size: 13px;
+}
+
+.lock-icon {
+  font-size: 16px;
+}
+
+@media (max-width: 768px) {
+  .welcome-content {
+    padding: 20px;
+    max-width: 90%;
+  }
+  
+  .welcome-text h1 {
+    font-size: 28px;
+  }
+  
+  .welcome-image svg {
+    width: 280px;
+    height: 200px;
+  }
+}

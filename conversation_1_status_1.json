@@ -1,0 +1,25 @@
+{
+  "payload_type": "whatsapp_webhook_status",
+  "_id": "conv1-status1",
+  "metaData": {
+    "entry": [
+      {
+        "changes": [
+          {
+            "field": "messages",
+            "value": {
+              "statuses": [
+                {
+                  "id": "wamid.HBgMOTE5OTY3NTc4NzIwFQIAEhggMTIzQURFRjEyMzQ1Njc4OTA=",
+                  "status": "delivered",
+                  "timestamp": "1754400010",
+                  "recipient_id": "919937320320"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

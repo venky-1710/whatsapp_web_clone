@@ -1,0 +1,314 @@
+.side-navigation {
+  width: 70px;
+  background-color: #202c33;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-right: 1px solid #2a3942;
+  position: relative;
+  z-index: 10;
+}
+
+.side-nav-header {
+  padding: 20px 0 16px 0;
+  border-bottom: 1px solid #2a3942;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.whatsapp-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.whatsapp-logo:hover {
+  transform: scale(1.05);
+}
+
+.side-nav-menu {
+  flex: 1;
+  padding: 16px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+  align-items: center;
+}
+
+.side-nav-item {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  position: relative;
+  color: #8696a0;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.side-nav-item:hover {
+  background-color: #2a3942;
+  color: #e9edef;
+}
+
+.side-nav-item.active {
+  background-color: #00a884;
+  color: #ffffff;
+}
+
+.side-nav-item.active .notification-badge {
+  background-color: #ffffff;
+  color: #00a884;
+}
+
+.nav-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.nav-label {
+  font-size: 9px;
+  font-weight: 500;
+  text-align: center;
+  opacity: 0.8;
+  margin-top: 2px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 45px;
+}
+
+.notification-badge {
+  position: absolute;
+  top: -2px;
+  right: -2px;
+  background-color: #00a884;
+  color: white;
+  border-radius: 12px;
+  min-width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 0 6px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  z-index: 1;
+}
+
+.side-nav-footer {
+  padding: 16px 0 20px 0;
+  border-top: 1px solid #2a3942;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+  align-items: center;
+}
+
+.settings-item {
+  width: 50px;
+  height: 50px;
+  border-radius: 12px;
+  color: #8696a0;
+}
+
+.settings-item:hover {
+  background-color: #2a3942;
+  color: #e9edef;
+}
+
+.profile-item {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  padding: 0;
+  overflow: hidden;
+  position: relative;
+}
+
+.profile-item:hover {
+  background-color: transparent;
+}
+
+.profile-item:hover .profile-image {
+  transform: scale(1.05);
+}
+
+.profile-avatar {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.profile-image {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  transition: transform 0.2s ease;
+  cursor: pointer;
+}
+
+/* Status indicator for online */
+.profile-item::after {
+  content: '';
+  position: absolute;
+  bottom: 2px;
+  right: 2px;
+  width: 12px;
+  height: 12px;
+  background-color: #00a884;
+  border: 2px solid #202c33;
+  border-radius: 50%;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .side-navigation {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 70px;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    z-index: 1000;
+    border-right: none;
+    border-top: 1px solid #2a3942;
+  }
+
+  .side-nav-header {
+    display: none;
+  }
+
+  .side-nav-menu {
+    flex-direction: row;
+    padding: 0;
+    gap: 0;
+    flex: 1;
+    justify-content: space-around;
+  }
+
+  .side-nav-footer {
+    flex-direction: row;
+    padding: 0;
+    border-top: none;
+    gap: 0;
+  }
+
+  .side-nav-item {
+    width: 60px;
+    height: 50px;
+    border-radius: 8px;
+  }
+
+  .nav-label {
+    font-size: 10px;
+    margin-top: 2px;
+  }
+
+  .notification-badge {
+    top: 4px;
+    right: 8px;
+  }
+
+  .profile-item {
+    width: 50px;
+    height: 50px;
+    margin-left: 10px;
+  }
+
+  .settings-item {
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+  }
+}
+
+/* Animation for active state */
+.side-nav-item.active {
+  animation: pulse 0.3s ease;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Tooltip for desktop */
+@media (min-width: 769px) {
+  .side-nav-item {
+    position: relative;
+  }
+
+  .side-nav-item::before {
+    content: attr(title);
+    position: absolute;
+    left: 65px;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #374045;
+    color: #e9edef;
+    padding: 8px 12px;
+    border-radius: 8px;
+    font-size: 12px;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.2s ease;
+    z-index: 1000;
+    pointer-events: none;
+  }
+
+  .side-nav-item::after {
+    content: '';
+    position: absolute;
+    left: 57px;
+    top: 50%;
+    transform: translateY(-50%);
+    border: 6px solid transparent;
+    border-right-color: #374045;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.2s ease;
+    z-index: 1000;
+    pointer-events: none;
+  }
+
+  .side-nav-item:hover::before,
+  .side-nav-item:hover::after {
+    opacity: 1;
+    visibility: visible;
+  }
+}

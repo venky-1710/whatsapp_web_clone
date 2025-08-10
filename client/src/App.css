@@ -1,0 +1,144 @@
+.app {
+  height: 100vh;
+  width: 100vw;
+  background-color: #111b21;
+  display: flex;
+  overflow: hidden;
+}
+
+.app-container {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  background-color: #0b141a;
+}
+
+.sidebar {
+  width: 400px;
+  min-width: 300px;
+  max-width: 500px;
+  background-color: #111b21;
+  border-right: 1px solid #2a3942;
+  display: flex;
+  flex-direction: column;
+}
+
+.main-content {
+  flex: 1;
+  background-color: #0b141a;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Placeholder content styles */
+.placeholder-sidebar {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: #111b21;
+}
+
+.placeholder-header {
+  background-color: #202c33;
+  padding: 16px 20px;
+  border-bottom: 1px solid #2a3942;
+}
+
+.placeholder-header h2 {
+  color: #e9edef;
+  font-size: 20px;
+  font-weight: 400;
+  margin: 0;
+}
+
+.placeholder-content {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+}
+
+.coming-soon {
+  text-align: center;
+  max-width: 300px;
+}
+
+.coming-soon-icon {
+  font-size: 48px;
+  margin-bottom: 16px;
+  opacity: 0.6;
+}
+
+.coming-soon h3 {
+  color: #e9edef;
+  font-size: 24px;
+  font-weight: 300;
+  margin-bottom: 12px;
+}
+
+.coming-soon p {
+  color: #8696a0;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.mobile-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 70px; /* Space for bottom navigation */
+}
+
+.placeholder-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.placeholder-content h3 {
+  color: #e9edef;
+  font-size: 24px;
+  font-weight: 300;
+  margin-bottom: 12px;
+}
+
+.placeholder-content p {
+  color: #8696a0;
+  font-size: 14px;
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+  .app-container {
+    flex-direction: column;
+  }
+  
+  .sidebar {
+    width: 100%;
+    min-width: unset;
+    max-width: unset;
+    border-right: none;
+    border-bottom: 1px solid #2a3942;
+    flex: 1;
+  }
+  
+  .main-content {
+    flex: 1;
+  }
+
+  .mobile-content {
+    height: calc(100vh - 70px);
+    overflow: hidden;
+  }
+
+  .placeholder-sidebar {
+    height: 100%;
+  }
+}
